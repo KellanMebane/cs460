@@ -1,0 +1,5 @@
+dd if=/dev/zero of=ramdisk bs=1024 count=1024
+mke2fs -b 1024 ramdisk 
+mount -o loop ramdisk /mnt 
+mkdir /mnt/bin
+umount /mnt

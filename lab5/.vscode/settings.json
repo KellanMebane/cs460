@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "type.h": "c",
+        "keymap": "c"
+    }
+}

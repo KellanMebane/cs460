@@ -1,0 +1,55 @@
+arm-none-eabi-as -mcpu=arm926ej-s us.s -o us.o
+arm-none-eabi-gcc -c -mcpu=arm926ej-s -o u1.o u1.c
+arm-none-eabi-ld -T u.ld us.o u1.o -Ttext=0x80000000 -o u1.elf
+mount -o loop ../ramdisk /mnt 
+cp u1 /mnt/bin 
+umount /mnt
+
+arm-none-eabi-objcopy -O binary u1.elf u1
+arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm u1 u1.o
+
+rm *.elf
+
+arm-none-eabi-as -mcpu=arm926ej-s us.s -o us.o
+arm-none-eabi-gcc -c -mcpu=arm926ej-s -o u2.o u2.c
+arm-none-eabi-ld -T u.ld us.o u2.o -Ttext=0x80000000 -o u2.elf
+mount -o loop ../ramdisk /mnt 
+cp u2 /mnt/bin 
+umount /mnt
+
+arm-none-eabi-objcopy -O binary u2.elf u2
+arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm u2 u2.o
+
+rm *.elf
+
+arm-none-eabi-as -mcpu=arm926ej-s us.s -o us.o
+arm-none-eabi-gcc -c -mcpu=arm926ej-s -o u3.o u3.c
+arm-none-eabi-ld -T u.ld us.o u3.o -Ttext=0x80000000 -o u3.elf
+mount -o loop ../ramdisk /mnt 
+cp u3 /mnt/bin 
+umount /mnt
+
+arm-none-eabi-objcopy -O binary u3.elf u3
+arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm u3 u3.o
+
+rm *.elf
+
+arm-none-eabi-as -mcpu=arm926ej-s us.s -o us.o
+arm-none-eabi-gcc -c -mcpu=arm926ej-s -o u4.o u4.c
+arm-none-eabi-ld -T u.ld us.o u4.o -Ttext=0x80000000 -o u4.elf
+mount -o loop ../ramdisk /mnt 
+cp u4 /mnt/bin 
+umount /mnt
+
+arm-none-eabi-objcopy -O binary u4.elf u4
+arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm u4 u4.o
+
+rm *.elf
+
+
+
+ 
+
+
+
+
